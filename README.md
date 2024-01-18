@@ -1,23 +1,28 @@
 此程序是linux客户端,GUI使用clahs-dashboard
+---
 
 
 
-> `clash` -> linux 可执行文件
-clash 文件移动到 `/usr/local/bin/clash`
+`clash` -> linux 可执行文件
+
+`clash`文件移动到 `/usr/local/bin/clash`
+
 运行过clash，~/.config/clash下会自动生成config.yaml ,Country.mmdb
+
 执行 `sudo ln -s ~/.config/clash /etc/clash`
 
-> `clash-dashboard-master.zip` -> 页面控制面板
+---
+`clash-dashboard-master.zip` -> 页面控制面板
 
-解压
-`tar -xvf clash-dashboard-master.zip -C dashboard`
+解压 `tar -xvf clash-dashboard-master.zip -C dashboard`
+
 移动目录`dashboard` 到 ` ~/.config/clash`下
 
+打包成.tar文件 `tar -cvf [文件名].tar [文件目录]`
 
-> 打包成.tar文件
-`tar -cvf [文件名].tar [文件目录]`
+---
 
->config.yaml 加
+config.yaml 加配置
 ```
 `mixed-port: 7890`
 allow-lan: true
