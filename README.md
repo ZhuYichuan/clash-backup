@@ -45,6 +45,9 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
+执行 `sudo systemctl daemon-reload`
+
+启动服务：`sudo systemctl start clash.service`
 
 相关命令：
 ```
