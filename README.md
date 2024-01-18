@@ -1,4 +1,4 @@
-
+此程序是linux客户端,GUI使用clahs-dashboard
 
 
 
