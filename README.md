@@ -25,7 +25,7 @@ log-level: info
 `external-ui: dashboard`
 `external-controller: 0.0.0.0:9090`
 ```
-访问控制台 `http://xxx:port/ui/dist`
+访问控制台 `http://xxx:port/ui/dist`  密码 `123456`
 
 创建 `/etc/systemd/system/clash.service`
 ```
