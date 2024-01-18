@@ -11,7 +11,8 @@ clash 文件移动到 `/usr/local/bin/clash`
 > clash-dashboard-master.zip -> 页面控制面板
 
 > 解压
-`tar -xvf clash-dashboard-master.zip -C clash-dashboard`
+`tar -xvf clash-dashboard-master.zip -C dashboard`
+移动目录`dashboard` 到 ` ~/.config/clash`下
 > 
 > 打包成.tar文件
 `tar -cvf [文件名].tar [文件目录]`
