@@ -12,8 +12,20 @@ clash 文件移动到 `/usr/local/bin/clash`
 
 > 解压
 `tar -xvf clash-dashboard-master.zip -C clash-dashboard`
+> 
 > 打包成.tar文件
 `tar -cvf [文件名].tar [文件目录]`
+> 
+>config.yaml 加
+```
+`mixed-port: 7890`
+allow-lan: true
+mode: Rule
+log-level: info
+`external-ui: dashboard`
+`external-controller: 0.0.0.0:9090`
+```
+访问控制台 `http://xxx:port/ui/dist`
 
 创建 `/etc/systemd/system/clash.service`
 ```
