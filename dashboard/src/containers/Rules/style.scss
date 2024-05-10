@@ -1,0 +1,63 @@
+.rule-item {
+    line-height: 30px;
+    padding: 5px 0;
+    height: 50px;
+    overflow: hidden;
+    list-style: none;
+    user-select: none;
+    border-bottom: 1px solid rgba($color: $color-primary-lightly, $alpha: 0.5);
+
+    .drag-handler {
+        cursor: row-resize;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+
+        > i {
+            font-weight: bold;
+            color: $color-gray-dark;
+        }
+    }
+
+    .rule-type {
+        font-size: 14px;
+        color: $color-primary-darken;
+
+        > i {
+            margin-left: 5px;
+            color: $color-primary-darken;
+        }
+    }
+
+    .payload {
+        font-size: 14px;
+        color: $color-primary-darken;
+        cursor: pointer;
+    }
+
+    .rule-proxy {
+        font-size: 14px;
+        color: $color-primary-darken;
+    }
+
+    .delete-btn {
+        opacity: 0;
+        transition: all 300ms ease;
+
+        span {
+            font-size: 14px;
+            color: $color-red;
+            cursor: pointer;
+        }
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        .delete-btn {
+            opacity: 1;
+        }
+    }
+}

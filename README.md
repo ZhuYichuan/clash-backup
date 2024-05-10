@@ -12,10 +12,9 @@
 执行 `sudo ln -s ~/.config/clash /etc/clash`
 
 ---
-`clash-dashboard-master.zip` -> 页面控制面板
+`clash-dashboard-master.zip` -> 页面控制面板 提供给你编编译使用
 
-解压 `tar -xvf clash-dashboard-master.zip -C dashboard`
-
+我已经编译好dist文件在 dashboard 中
 移动目录`dashboard` 到 ` ~/.config/clash`下
 
 打包成.tar文件 `tar -cvf [文件名].tar [文件目录]`
@@ -39,7 +38,7 @@ log-level: info
 Description=Clash Daemon
 
 [Service]
-ExecStart=/usr/local/bin/clash -d ~/.config/clash
+ExecStart=/usr/local/bin/clash -d /home/xxx/.config/clash
 Restart=on-failure
 
 [Install]

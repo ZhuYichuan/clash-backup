@@ -1,0 +1,70 @@
+.proxies-list {
+    --item-width: calc(100% / (var(--columns) + 1));
+    --gap: calc(var(--item-width) / var(--columns));
+
+    display: flex;
+    margin-right: calc(-1 * var(--gap));
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    list-style: none;
+
+    @include response(xxl) {
+        --columns: 12;
+    }
+
+    @include response(xl) {
+        --columns: 10;
+    }
+
+    @include response(lg) {
+        --columns: 8;
+    }
+
+    @include response(md) {
+        --columns: 7;
+    }
+
+    @include response(sm) {
+        --columns: 6;
+    }
+
+    @include response(xs) {
+        --columns: 5;
+    }
+
+    @include response(xxs) {
+        --columns: 3;
+    }
+
+    > li {
+        display: inline-block;
+        width: var(--item-width);
+        margin-right: var(--gap);
+        flex-shrink: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.proxies-speed-test {
+    line-height: 32px;
+    margin: 0 2px 0 6px;
+    color: $color-primary-dark;
+    text-shadow: 0 2px 6px rgba($color: $color-primary-dark, $alpha: 0.4);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .proxies-list {
+        margin-right: 0;
+        padding-bottom: 20px;
+        flex-wrap: unset;
+        flex-direction: column;
+
+        > li {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+}

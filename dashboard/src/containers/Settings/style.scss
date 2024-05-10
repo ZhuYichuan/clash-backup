@@ -1,0 +1,67 @@
+.settings-card {
+    margin-top: 10px;
+    padding: 0.75rem 0;
+
+    .label {
+        font-size: 14px;
+        color: $color-primary-darken;
+    }
+
+    .external-controller {
+        font-size: 14px;
+        color: $color-primary-darken;
+        display: flex;
+        justify-content: flex-end;
+        font-weight: normal;
+        line-height: 17px;
+
+        &.modify-btn {
+            color: $color-primary;
+            cursor: pointer;
+        }
+    }
+}
+
+.clash-version {
+    position: relative;
+    margin-top: 10px;
+    padding: 20px 45px;
+    display: flex;
+
+    .check-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > i {
+            transform: scale(0.5);
+            color: $color-white;
+            font-weight: bold;
+        }
+    }
+
+    .version-info {
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: 24px;
+        color: $color-primary-darken;
+    }
+
+    .check-update-btn {
+        position: absolute;
+        right: 45px;
+        font-size: 14px;
+        line-height: 24px;
+        color: $color-gray-dark;
+        cursor: pointer;
+        transition: all 150ms ease;
+
+        &:hover {
+            color: $color-primary-darken;
+        }
+    }
+}
