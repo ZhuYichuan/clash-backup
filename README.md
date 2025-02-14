@@ -67,6 +67,45 @@ service clash status
 journalctl -e -u clash.service
 ```
 
+你可以通过以下步骤在 Windows 中创建服务实现后台运行：
+
+### 使用 NSSM（推荐更稳定）
+1. [下载 NSSM](https://nssm.cc/download)
+2. 解压后将 `nssm.exe` 放到 `C:\Windows\System32`
+3. 管理员权限运行命令提示符：
+```cmd
+nssm install MihomoService
+```
+4. 在弹出的 GUI 中设置：
+   - Path: `C:\Windows\System32\mihomo.exe`
+   - Arguments: `-f "C:\Users\zhuyi\.config\mihomo\config.yaml"`
+   - 在 "Details" 选项卡设置服务名称
+   - 在 "Log on" 选项卡选择 "Local System account"
+
+5. 启动服务：
+```cmd
+nssm start MihomoService
+```
+
+### 验证服务状态
+```cmd
+sc query MihomoService
+```
+
+### 删除服务
+```cmd
+sc delete MihomoService
+# 或使用 NSSM
+nssm remove MihomoService confirm
+```
+
+建议优先使用 NSSM 工具，它可以：
+- 自动处理服务生命周期
+- 捕获输出日志
+- 支持服务崩溃后自动重启
+- 提供友好的 GUI 配置界面
+
+如果遇到权限问题，请确保全程使用管理员权限操作。服务创建后会自动随系统启动，即使没有用户登录也会在后台运行。
 
 
 # 要使 Windows 机器（192.168.9.10）通过 Ubuntu 上运行的 Clash（开启了 TUN 模式）来科学上网，你需要做以下几步配置：
