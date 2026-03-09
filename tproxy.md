@@ -10,10 +10,6 @@ net.ipv6.conf.all.forwarding=1
 # 优化网络拥塞控制（推荐）
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
-
-dns:
-  enable: true
-  listen: 0.0.0.0:53
 ```
 3.应用生效：
 ```
@@ -37,6 +33,10 @@ WantedBy=multi-user.target
 
 2.mihomo yaml 
 ```
+dns:
+  enable: true
+  listen: 0.0.0.0:53  # 监听 53 端口，充当局域网的 DNS 服务器
+
 tproxy-port: 7893
 allow-lan: true
 bind-address: '*'
