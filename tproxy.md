@@ -181,7 +181,22 @@ sudo vi /etc/resolv.conf
 
 # 首选让本机查询本地的 Mihomo (稍后配置 Mihomo 监听 53 端口)
 nameserver 127.0.0.1
+```
+# 1. 解锁（如果之前锁过的话，防报错）
+sudo chattr -i /etc/resolv.conf 2>/dev/null
 
+# 2. 强行删除旧文件或软链接
+sudo rm -f /etc/resolv.conf
+
+# 3. 重新写入配置（指向本机的 Mihomo）
+cat <<EOF | sudo tee /etc/resolv.conf
+nameserver 127.0.0.1
+nameserver 223.5.5.5
+EOF
+
+# 4. 上锁！天王老子来了也不能改这个文件
+sudo chattr +i /etc/resolv.conf
+```
 ```
 `sudo ss -tulpn | grep :53`
 
